@@ -39,7 +39,7 @@ class AppServiceProvider extends ServiceProvider
          */
         \Validator::extend('email_domain_allowed', function($attribute, $value, $parameters, $validator) {
             $forbiddenDomainsString = str_replace(' ', '', Config::get('app.forbidden_email_domains'));
-            $forbiddenDomains = explode(',', $forbiddenDomainsString);
+            $forbiddenDomains = explode(',',' ','', $forbiddenDomainsString);
             return ! in_array(explode('@', $value)[1], $forbiddenDomains);
         });
 
